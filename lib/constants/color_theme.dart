@@ -11,14 +11,27 @@ class MathColorTheme {
 
   Color get mediumGray => const Color(0xFFFFFFFF);
 
+  Color get darkScaffold => const Color(0xFF2A2A3E);
+
+  Color get darkField => const Color(0xFF35354E);
+
   Color get errorRed => const Color(0xFFFF4343);
 
+  Color get successGreen => Colors.white;
+
   Color get green => const Color(0xFF28AE7B);
+
+  Color get brownGray =>  Colors.grey;
 
   Color get lightBlack => const Color(0xFF2C2C2C);
 
   Color get Black => const Color(0xFF2C2C2C);
+
   Color get gray => const Color(0xFF2C2C2C).withOpacity(0.4);
+
+  Color get lightIcon => const Color(0xFF2C2C2C).withOpacity(0.9);
+
+
 
   //now list of primary blue colors
   Color get primaryColorBlue600 => const Color(0xFF567099);
@@ -71,17 +84,5 @@ class MathColorTheme {
   Color get neutral650 => const Color(0xFF6E6E6E);
   Color get white85 => Colors.white.withOpacity(0.8500000238418579);
 
-
-  Color get background => const Color(0xFFFBF0F3);
-  Color get yellowlight => const Color(0xFFFFC372);
-  Color get greenLight => const Color(0xFF60CDBB);
-  Color get purpulelight => const Color(0xFF8800C3);
-  Color get orangeLight => const Color(0xFFFB9666);
-  Color get redlight => const Color(0xFFC40052);
-  Color get greenL => const Color(0xFF42C96B);
-  Color get skyblue => const Color(0xFF0383BB);
-  Color get red => const Color(0xFFEC5863);
-  Color get coolBlue => const Color(0xFF2370CA);
-  Color get blue => const Color(0xFF4285F4);
 
 }

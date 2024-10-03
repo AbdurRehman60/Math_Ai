@@ -9,6 +9,11 @@ class Endpoints{
 
   // connectTimeout
   static const Duration connectionTimeout = Duration(milliseconds: 5000);
+  //authenticatoions
+  static const String login = 'authentication/token/obtain';
+  static const String googleLogIn = 'authentication/token/obtain';
+  static const String facebookLogIn = 'authentication/token/refresh';
+
 
 
 }

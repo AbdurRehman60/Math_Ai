@@ -1,6 +1,4 @@
 // ignore_for_file: non_constant_identifier_names
-
-import 'package:mathematics_ai/constants/color_theme.dart';
 import 'package:mathematics_ai/constants/constant_exports.dart';
 
 class MathTheme {
@@ -15,9 +13,7 @@ class MathTheme {
   ThemeData get data => ThemeData(
     primaryColor: _ColorTheme.green,
     fontFamily: _TextTheme.fontFamily,
-    colorScheme: colorScheme,
     appBarTheme: appBarTheme,
-    scaffoldBackgroundColor: Colors.white,
     textButtonTheme: textButtonThemeData,
     tabBarTheme: tabBarTheme,
     useMaterial3: true,
@@ -27,13 +23,8 @@ class MathTheme {
     selectionHandleColor: MathColorTheme().green, // Handle color
   ));
 
-  ColorScheme get colorScheme => const ColorScheme.light().copyWith(
-    primary: _ColorTheme.green,
-    secondary: _ColorTheme.primaryColorBlue,
-    background: _ColorTheme.white,
-    surface: _ColorTheme.white,
-    surfaceTint: _ColorTheme.neutral100,
-  );
+
+
 
   TextButtonThemeData get textButtonThemeData => TextButtonThemeData(
     style: ButtonStyle(

@@ -1,5 +1,3 @@
-import 'package:mathematics_ai/constants/text_theme.dart';
-
 import '../../constants/constant_exports.dart';
 
 class CustomButton extends StatelessWidget {
@@ -21,7 +19,7 @@ class CustomButton extends StatelessWidget {
         ),
         onPressed: onTap,
         child: Text(
-          'Login',
+          title,
           style:
               MathTextTheme().body.copyWith(color: Colors.white, fontSize: 16,fontWeight: FontWeight.w500),
         ),
