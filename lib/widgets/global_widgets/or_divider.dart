@@ -1,4 +1,8 @@
+import 'package:provider/provider.dart';
+
 import '../../constants/constant_exports.dart';
+import '../../providers/theme_provider.dart';
+
 class OrDivider extends StatelessWidget {
   const OrDivider({
     super.key,
@@ -38,7 +42,6 @@ class OrDivider extends StatelessWidget {
   }
 }
 
-
 class Dividerr extends StatelessWidget {
   const Dividerr({super.key, required this.enablePadding});
   final bool enablePadding;
@@ -46,9 +49,13 @@ class Dividerr extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: enablePadding ?12 : 0 ),
-      child: Divider(height: 1,color: MathColorTheme().lightIcon.withOpacity(0.2),),
+      padding: EdgeInsets.only(top: enablePadding ? 12 : 0),
+      child: Divider(
+        height: 1,
+        color: Provider.of<ThemeProvider>(context).isDarkMode
+            ? MathColorTheme().white.withOpacity(0.4)
+            : MathColorTheme().lightIcon.withOpacity(0.2),
+      ),
     );
   }
 }
-

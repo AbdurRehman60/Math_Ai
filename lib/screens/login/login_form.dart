@@ -46,18 +46,22 @@ class LoginForm extends StatelessWidget {
             print('Login failed: ${response['message']}');
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                 content: Text(
-                  response['message'] ?? 'Login failed',
-                  style: MathTextTheme().body.copyWith(fontSize: 14,color: Colors.white),
-                )));
+              response['message'] ?? 'Login failed',
+              style: MathTextTheme()
+                  .body
+                  .copyWith(fontSize: 14, color: Colors.white),
+            )));
           }
         } catch (e) {
           // Handle any unexpected errors
           print('Error during login: $e');
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
               content: Text(
-                'An error occurred: $e',
-                style: MathTextTheme().body.copyWith(fontSize: 14,color: Colors.white),
-              )));
+            'An error occurred: $e',
+            style: MathTextTheme()
+                .body
+                .copyWith(fontSize: 14, color: Colors.white),
+          )));
         } finally {
           auth.status = AuthStatus.notLoggedIn;
         }
@@ -70,40 +74,49 @@ class LoginForm extends StatelessWidget {
         children: [
           CustomTextField(
             contentStyle: MathTextTheme().body.copyWith(
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-              color: Provider.of<ThemeProvider>(context, listen: false).isDarkMode
-                  ? MathColorTheme().white
-                  : MathColorTheme().lightBlack,
-            ),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  color: Provider.of<ThemeProvider>(context, listen: false)
+                          .isDarkMode
+                      ? MathColorTheme().white
+                      : MathColorTheme().lightBlack,
+                ),
             alignLabelWithText: false,
             filled: true,
-            fillColor: Provider.of<ThemeProvider>(context, listen: false).isDarkMode
-                ? MathColorTheme().darkField
-                : MathColorTheme().lightGray,
+            fillColor:
+                Provider.of<ThemeProvider>(context, listen: false).isDarkMode
+                    ? MathColorTheme().darkField
+                    : MathColorTheme().lightGray,
             controller: emailController,
             cursorColor: MathColorTheme().green,
             hintText: '   User Name',
             hintStyle: MathTextTheme().body.copyWith(
-              fontSize: 14,
-              color: Provider.of<ThemeProvider>(context, listen: false).isDarkMode
-                  ? MathColorTheme().brownGray
-                  : MathColorTheme().lightBlack.withOpacity(0.5),
-              fontWeight: FontWeights.medium,
-            ),
+                  fontSize: 14,
+                  color: Provider.of<ThemeProvider>(context, listen: false)
+                          .isDarkMode
+                      ? MathColorTheme().brownGray
+                      : MathColorTheme().lightBlack.withOpacity(0.5),
+                  fontWeight: FontWeights.medium,
+                ),
             prefixIcon: Padding(
               padding: const EdgeInsets.all(3.0),
               child: Container(
                 padding: const EdgeInsets.all(8.0),
                 decoration: BoxDecoration(
-                  color: Provider.of<ThemeProvider>(context,listen: false).isDarkMode ? MathColorTheme().seaBlue :  MathColorTheme().white,
+                  color: Provider.of<ThemeProvider>(context, listen: false)
+                          .isDarkMode
+                      ? MathColorTheme().seaBlue
+                      : MathColorTheme().white,
                   borderRadius: BorderRadius.circular(5.5),
                 ),
                 child: Image.asset(
                   MathAssets.profile,
                   height: 20,
                   width: 20,
-                  color: Provider.of<ThemeProvider>(context,listen: false).isDarkMode ? MathColorTheme().white :  MathColorTheme().black,
+                  color: Provider.of<ThemeProvider>(context, listen: false)
+                          .isDarkMode
+                      ? MathColorTheme().white
+                      : MathColorTheme().black,
                 ),
               ),
             ),
@@ -115,45 +128,53 @@ class LoginForm extends StatelessWidget {
               return null;
             },
           ),
-
           const SizedBox(height: 16),
           CustomTextField(
             contentStyle: MathTextTheme().body.copyWith(
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-              color: Provider.of<ThemeProvider>(context, listen: false).isDarkMode
-                  ? MathColorTheme().white
-                  : MathColorTheme().lightBlack,
-            ),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  color: Provider.of<ThemeProvider>(context, listen: false)
+                          .isDarkMode
+                      ? MathColorTheme().white
+                      : MathColorTheme().lightBlack,
+                ),
             alignLabelWithText: false,
             filled: true,
-            fillColor: Provider.of<ThemeProvider>(context, listen: false).isDarkMode
-                ? MathColorTheme().darkField
-                : MathColorTheme().lightGray,
+            fillColor:
+                Provider.of<ThemeProvider>(context, listen: false).isDarkMode
+                    ? MathColorTheme().darkField
+                    : MathColorTheme().lightGray,
             controller: passwordController,
             obscureText: true,
             cursorColor: MathColorTheme().green,
             hintText: '   Password',
             hintStyle: MathTextTheme().body.copyWith(
-              fontSize: 14,
-              color: Provider.of<ThemeProvider>(context, listen: false).isDarkMode
-                  ? MathColorTheme().brownGray
-                  : MathColorTheme().lightBlack.withOpacity(0.5),
-              fontWeight: FontWeights.medium,
-            ),
+                  fontSize: 14,
+                  color: Provider.of<ThemeProvider>(context, listen: false)
+                          .isDarkMode
+                      ? MathColorTheme().brownGray
+                      : MathColorTheme().lightBlack.withOpacity(0.5),
+                  fontWeight: FontWeights.medium,
+                ),
             prefixIcon: Padding(
               padding: const EdgeInsets.all(3.0),
               child: Container(
                 padding: const EdgeInsets.all(8.0),
                 decoration: BoxDecoration(
-                  color: Provider.of<ThemeProvider>(context,listen: false).isDarkMode ? MathColorTheme().seaBlue :  MathColorTheme().white,
+                  color: Provider.of<ThemeProvider>(context, listen: false)
+                          .isDarkMode
+                      ? MathColorTheme().seaBlue
+                      : MathColorTheme().white,
                   borderRadius: BorderRadius.circular(5.5),
                 ),
                 child: Image.asset(
                   MathAssets.lock,
                   height: 20,
                   width: 20,
-                  color: Provider.of<ThemeProvider>(context,listen: false).isDarkMode ? MathColorTheme().white :  MathColorTheme().black,
+                  color: Provider.of<ThemeProvider>(context, listen: false)
+                          .isDarkMode
+                      ? MathColorTheme().white
+                      : MathColorTheme().black,
                 ),
               ),
             ),
@@ -165,7 +186,6 @@ class LoginForm extends StatelessWidget {
               return null;
             },
           ),
-
           const SizedBox(height: 8),
           Align(
             alignment: Alignment.centerRight,
@@ -176,23 +196,25 @@ class LoginForm extends StatelessWidget {
               child: Text(
                 'Forgot password?',
                 style: MathTextTheme().body.copyWith(
-                  color: MathColorTheme().green,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 14,
-                ),
+                      color: MathColorTheme().green,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14,
+                    ),
               ),
             ),
           ),
           const SizedBox(height: 24),
           auth.status == AuthStatus.authenticating
-              ?  CircularProgressIndicator(color: MathColorTheme().green,)
+              ? CircularProgressIndicator(
+                  color: MathColorTheme().green,
+                )
               : CustomButton(
-            title: 'Login',
-            onTap: onLoginPressed,
-          ),
+                  title: 'Login',
+                  onTap: onLoginPressed,
+                  buttonColor: MathColorTheme().green,
+                ),
         ],
       ),
     );
   }
 }
-
