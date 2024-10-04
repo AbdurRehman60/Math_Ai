@@ -2,6 +2,7 @@ class MathAssets{
   MathAssets._();
 
   static const String logo = 'assets/icons/appicon.png';
+  static const String darkLogo = 'assets/icons/dark-logo.png';
   static const String lock = 'assets/icons/lock.png';
   static const profile = 'assets/icons/Profile.png';
   static const profile1 = 'assets/icons/Profile1.png';
@@ -13,5 +14,7 @@ class MathAssets{
   static const edit = 'assets/icons/Edit.png';
   static const copy = 'assets/icons/copy.png';
   static const photo = 'assets/icons/photo.png';
+  static const warning = 'assets/icons/warning.png';
+  static const logout = 'assets/icons/logout.png';
 
 }

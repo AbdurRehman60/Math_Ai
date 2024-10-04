@@ -222,6 +222,7 @@ class NewPasswordScreen extends StatelessWidget {
                           _showSuccessModal(context);
                           if (_formKey.currentState!.validate()) {}
                         },
+                        buttonColor: MathColorTheme().green,
                       ),
                     ],
                   ),
@@ -311,6 +312,7 @@ class NewPasswordScreen extends StatelessWidget {
                         onTap: () {
                           Navigator.pop(context);
                         },
+                        buttonColor: MathColorTheme().black,
                       ),
                     ],
                   ),
