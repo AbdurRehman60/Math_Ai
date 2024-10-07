@@ -111,6 +111,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 enablePadding: false,
               ),
               _buildSettingsTile('Appearance', context,onTap: () {
+                Navigator.of(context).pushNamed('/appearance');
               }),
               const Dividerr(
                 enablePadding: false,
@@ -122,8 +123,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
               const Dividerr(
                 enablePadding: false,
               ),
-              _buildDarkModeTile(
-                  themeProvider, isDarkMode,context),
               const Spacer(),
               const Dividerr(
                 enablePadding: false,
@@ -140,7 +139,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     size: 16, color: MathColorTheme().errorRed),
                 onTap: () {
                   showLogoutConfirmationBottomSheet(context);
-                  // Navigator.push(context, MaterialPageRoute(builder: (context)=> const LoginScreen()));
                 },
               ),
             ],
@@ -239,26 +237,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
       color: Provider.of<ThemeProvider>(context).isDarkMode ? MathColorTheme().white : MathColorTheme().black,
       ),
       onTap: onTap,
-    );
-  }
-
-  Widget _buildDarkModeTile(ThemeProvider themeProvider, bool isDarkMode,BuildContext context) {
-    return ListTile(
-      contentPadding: EdgeInsets.zero,
-      title: Text(
-        'Dark Mode',
-        style: MathTextTheme().body.copyWith(
-          color: Provider.of<ThemeProvider>(context).isDarkMode ? MathColorTheme().white : MathColorTheme().black
-        ),
-      ),
-      trailing: Switch(
-        value: isDarkMode,
-        onChanged: (value) {
-          themeProvider
-              .toggleTheme(value);
-        },
-        activeColor: MathColorTheme().green,
-      ),
     );
   }
 }

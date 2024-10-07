@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:mathematics_ai/constants/assets.dart';
 import 'package:mathematics_ai/constants/color_theme.dart';
+import 'package:mathematics_ai/providers/theme_provider.dart';
 import 'package:mathematics_ai/screens/profile/profile_screen.dart';
+import 'package:provider/provider.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -49,9 +51,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
           Center(child: _buildNavItem(1)),
           Center(child: _buildNavItem(2)),
         ],
-        color: MathColorTheme().lightGray,
+        color:Provider.of<ThemeProvider>(context,).isDarkMode ? MathColorTheme().seaBlue : MathColorTheme().lightGray,
         buttonBackgroundColor: MathColorTheme().green,
-        backgroundColor: Colors.white,
+        backgroundColor: Provider.of<ThemeProvider>(context).isDarkMode ? MathColorTheme().darkScaffold  : Colors.white,
         animationCurve: Curves.easeInOut,
         animationDuration: const Duration(milliseconds: 300),
         onTap: (index) {

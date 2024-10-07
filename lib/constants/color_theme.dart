@@ -17,6 +17,8 @@ class MathColorTheme {
 
   Color get errorRed => const Color(0xFFFF4343);
 
+  Color get darkThemeCard => const  Color(0xFF28283B);
+
   Color get successGreen => Colors.white;
 
   Color get green => const Color(0xFF28AE7B);
@@ -25,7 +27,6 @@ class MathColorTheme {
 
   Color get lightBlack => const Color(0xFF2C2C2C);
 
-  Color get Black => const Color(0xFF2C2C2C);
 
   Color get gray => const Color(0xFF2C2C2C).withOpacity(0.4);
 

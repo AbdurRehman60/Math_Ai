@@ -5,6 +5,7 @@ import 'package:mathematics_ai/providers/auth_provider.dart';
 import 'package:mathematics_ai/providers/theme_provider.dart';
 import 'package:mathematics_ai/screens/login/login_screen.dart';
 import 'package:mathematics_ai/screens/profile/account_settings.dart';
+import 'package:mathematics_ai/screens/profile/appearance_screen.dart';
 import 'package:mathematics_ai/screens/profile/change_avatar.dart';
 import 'package:mathematics_ai/screens/profile/widgets/mentions.dart';
 import 'package:mathematics_ai/screens/profile/widgets/privacy_settings.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
           '/avatar' : (context) => const ChangeAvatarScreen(),
           '/privacySettings' : (context) => const PrivacySettings(),
           '/mentions': (context) => const Mentions(),
+          '/appearance' : (context) => const AppearanceScreen(),
         },
         theme: _theme.data,
         debugShowCheckedModeBanner: false,

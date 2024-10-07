@@ -53,8 +53,8 @@ class Dividerr extends StatelessWidget {
       child: Divider(
         height: 1,
         color: Provider.of<ThemeProvider>(context).isDarkMode
-            ? MathColorTheme().white.withOpacity(0.4)
-            : MathColorTheme().lightIcon.withOpacity(0.2),
+            ? MathColorTheme().white.withOpacity(0.15)
+            : MathColorTheme().lightBlack.withOpacity(0.15),
       ),
     );
   }

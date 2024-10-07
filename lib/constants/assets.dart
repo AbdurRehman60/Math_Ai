@@ -16,5 +16,7 @@ class MathAssets{
   static const photo = 'assets/icons/photo.png';
   static const warning = 'assets/icons/warning.png';
   static const logout = 'assets/icons/logout.png';
+  static const darkApp = 'assets/images/darkApp.png';
+  static const lightApp = 'assets/images/lightApp.png';
 
 }
