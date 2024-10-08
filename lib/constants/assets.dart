@@ -1,6 +1,7 @@
 class MathAssets{
   MathAssets._();
 
+  //icons
   static const String logo = 'assets/icons/appicon.png';
   static const String darkLogo = 'assets/icons/dark-logo.png';
   static const String lock = 'assets/icons/lock.png';
@@ -16,6 +17,13 @@ class MathAssets{
   static const photo = 'assets/icons/photo.png';
   static const warning = 'assets/icons/warning.png';
   static const logout = 'assets/icons/logout.png';
+  static const courseBook = 'assets/icons/courseBook.png';
+  static const exerciseArc = 'assets/icons/Arc.png';
+  static const greenLogo = 'assets/icons/greenLogo.png';
+
+  // images
+  static const exerciseBg = 'assets/images/exercise_bg.png';
+  static const darkExercise = 'assets/images/exercise_black.png';
   static const darkApp = 'assets/images/darkApp.png';
   static const lightApp = 'assets/images/lightApp.png';
 

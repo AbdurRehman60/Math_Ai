@@ -17,7 +17,7 @@ class AppearanceScreen extends StatelessWidget {
           isDarkMode ? MathColorTheme().darkScaffold : MathColorTheme().white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0).copyWith(top: 10),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,9 +31,14 @@ class AppearanceScreen extends StatelessWidget {
                     ),
                     CircleAvatar(
                       radius: 24,
-                      backgroundColor: Colors.grey.shade100,
-                      backgroundImage: AssetImage(
-                        MathAssets.profile,
+                      backgroundColor: Provider.of<ThemeProvider>(context,listen: false).isDarkMode ? MathColorTheme().darkField.withOpacity(0.8) : Colors.grey.shade100,
+                      child: ClipOval(
+                        child:  Image.asset(
+                          MathAssets.profile,
+                          width: 28,
+                          height: 28,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ],

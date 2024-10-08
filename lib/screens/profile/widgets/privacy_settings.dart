@@ -51,7 +51,7 @@ class _PrivacySettingsState extends State<PrivacySettings> {
           isDarkMode ? MathColorTheme().darkScaffold : MathColorTheme().white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0).copyWith(top: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

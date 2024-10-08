@@ -23,6 +23,10 @@ class MathColorTheme {
 
   Color get green => const Color(0xFF28AE7B);
 
+  Color get lightKhaki => const Color(0xFFDAE4D1);
+
+  Color get lightBlue => const Color(0xFFD2F2FF);
+
   Color get brownGray =>  Colors.grey;
 
   Color get lightBlack => const Color(0xFF2C2C2C);

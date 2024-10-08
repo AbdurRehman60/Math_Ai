@@ -6,15 +6,19 @@ import 'package:mathematics_ai/providers/theme_provider.dart';
 import 'package:mathematics_ai/screens/profile/profile_screen.dart';
 import 'package:provider/provider.dart';
 
+import '../../screens/home/home_screen.dart';
+
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
 
   @override
-  _BottomNavBarState createState() => _BottomNavBarState();
+ State<StatefulWidget> createState() {
+    return _BottomNavBarState();
+  }
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  int _bottomNavIndex = 1;
+  int _bottomNavIndex = 0;
 
   final List<Widget> _screens = [
     const HomeScreen(),
@@ -82,23 +86,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
   }
 }
 
-// Home Screen Widget
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-        child: Text(
-          'Home',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
-  }
-}
 
 // Courses Screen Widget
 class CoursesScreen extends StatelessWidget {
@@ -106,9 +93,12 @@ class CoursesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    final bool isDarkMode = themeProvider.isDarkMode;
+    return Scaffold(
+      backgroundColor:
+      isDarkMode ? MathColorTheme().darkScaffold : Colors.white,
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

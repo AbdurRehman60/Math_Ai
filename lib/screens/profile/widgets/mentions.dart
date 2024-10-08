@@ -43,7 +43,7 @@ class _MentionsState extends State<Mentions> {
           isDarkMode ? MathColorTheme().darkScaffold : MathColorTheme().white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0).copyWith(top: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -56,7 +56,7 @@ class _MentionsState extends State<Mentions> {
                   ),
                   CircleAvatar(
                     radius: 24,
-                    backgroundColor: Colors.grey.shade100,
+                    backgroundColor: Provider.of<ThemeProvider>(context,listen: false).isDarkMode ? MathColorTheme().darkField.withOpacity(0.8) : Colors.grey.shade100,
                     child: ClipOval(
                       child: _profileImageBytes != null
                           ? Image.memory(
@@ -125,7 +125,7 @@ class _MentionsState extends State<Mentions> {
                   size: 16,
                 ),
                 onTap: () {
-                  Navigator.pushNamed(context, '/accountSettings');
+                  Navigator.pushNamed(context, '/legal');
                 },
               ),
               const Dividerr(
@@ -135,7 +135,7 @@ class _MentionsState extends State<Mentions> {
                   'Terms & Conditions',
                   context,
                   onTap: () {
-                Navigator.pushNamed(context, '/privacySettings');
+                Navigator.pushNamed(context, '/terms');
               },
               ),
               const Dividerr(
@@ -145,7 +145,7 @@ class _MentionsState extends State<Mentions> {
                 'Privacy policy',
                 context,
                 onTap: () {
-                  Navigator.pushNamed(context, '/privacySettings');
+                  Navigator.pushNamed(context, '/privacyPolicy');
                 },
               ),
               const Dividerr(
@@ -155,7 +155,7 @@ class _MentionsState extends State<Mentions> {
                 'Cookie policy',
                 context,
                 onTap: () {
-                  Navigator.pushNamed(context, '/privacySettings');
+                  Navigator.pushNamed(context, '/cookiePolicyScreen');
                 },
               ),
               const Dividerr(
