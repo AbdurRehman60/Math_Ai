@@ -3,6 +3,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:mathematics_ai/constants/constant_exports.dart';
 import 'package:mathematics_ai/providers/auth_provider.dart';
 import 'package:mathematics_ai/providers/theme_provider.dart';
+import 'package:mathematics_ai/screens/home/course_exercise_screen.dart';
 import 'package:mathematics_ai/screens/home/home_screen.dart';
 import 'package:mathematics_ai/screens/home/level_section/level_selection.dart';
 import 'package:mathematics_ai/screens/login/login_screen.dart';
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
           '/terms' : (context) => const TermsConditionsScreen(),
           '/privacyPolicy': (context) => const PrivacyPolicyScreen(),
           '/cookiePolicyScreen': (context)=> const CookiePolicyScreen(),
+          '/course' : (context) => const CourseScreen(),
         },
         theme: _theme.data,
         debugShowCheckedModeBanner: false,

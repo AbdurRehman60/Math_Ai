@@ -36,6 +36,14 @@ class MathColorTheme {
 
   Color get lightIcon => const Color(0xFF2C2C2C).withOpacity(0.9);
 
+  Color get grey9D => const Color(0xFFD9D9D9);
+
+  Color get lighterGray => const Color(0xF0F0F0F0);
+
+  Color get lightBorder => const Color(0xFFD2D2D2);
+
+  Color get darkunitCard => const Color(0xFF474762);
+
 
 
   //now list of primary blue colors

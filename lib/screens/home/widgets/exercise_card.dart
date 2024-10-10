@@ -164,10 +164,15 @@ class _ExerciseCardState extends State<ExerciseCard> {
     return Column(
       children: List.generate(1, (index) {
         return ListTile(
-          leading: Text(
-            'Tests',
-            style: TextStyle(
-                color: isDarkMode ? Colors.white :Colors.black
+          leading: GestureDetector(
+            onTap: (){
+              Navigator.pushNamed(context, '/course');
+            },
+            child: Text(
+              'Tests',
+              style: TextStyle(
+                  color: isDarkMode ? Colors.white :Colors.black
+              ),
             ),
           ),
           trailing: Text(

@@ -20,6 +20,7 @@ class MathAssets{
   static const courseBook = 'assets/icons/courseBook.png';
   static const exerciseArc = 'assets/icons/Arc.png';
   static const greenLogo = 'assets/icons/greenLogo.png';
+  static const play = 'assets/icons/play.png';
 
   // images
   static const exerciseBg = 'assets/images/exercise_bg.png';

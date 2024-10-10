@@ -89,7 +89,7 @@ class _LevelSectionState extends State<LevelSection> {
                 exercises: 15,
               ),
               SizedBoxes.verticalBig,
-              ExerciseCard(
+              const ExerciseCard(
                 color: Color(0xFFFFD3B4),
                 title: 'Fourth',
                 exercises: 16,
