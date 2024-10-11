@@ -21,6 +21,7 @@ class MathAssets{
   static const exerciseArc = 'assets/icons/Arc.png';
   static const greenLogo = 'assets/icons/greenLogo.png';
   static const play = 'assets/icons/play.png';
+  static const mail = 'assets/icons/email.png';
 
   // images
   static const exerciseBg = 'assets/images/exercise_bg.png';

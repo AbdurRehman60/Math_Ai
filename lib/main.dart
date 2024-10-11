@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:mathematics_ai/constants/constant_exports.dart';
 import 'package:mathematics_ai/providers/auth_provider.dart';
+import 'package:mathematics_ai/providers/otp_provider.dart';
+import 'package:mathematics_ai/providers/otp_verification_provider.dart';
 import 'package:mathematics_ai/providers/theme_provider.dart';
 import 'package:mathematics_ai/screens/home/course_exercise_screen.dart';
 import 'package:mathematics_ai/screens/home/home_screen.dart';
@@ -16,7 +18,9 @@ import 'package:mathematics_ai/screens/profile/privacy_policy.dart';
 import 'package:mathematics_ai/screens/profile/terms_conditions.dart';
 import 'package:mathematics_ai/screens/profile/widgets/mentions.dart';
 import 'package:mathematics_ai/screens/profile/widgets/privacy_settings.dart';
-import 'package:mathematics_ai/screens/reset_password/reset.dart';
+import 'package:mathematics_ai/screens/reset_password/new_password.dart';
+import 'package:mathematics_ai/screens/reset_password/otp_verification_screen.dart';
+import 'package:mathematics_ai/screens/reset_password/password_reset.dart';
 import 'package:mathematics_ai/widgets/bottom_navigation_bar/navigation_bar.dart';
 import 'package:provider/provider.dart';
 
@@ -34,13 +38,14 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => AuthProvider()),
-        ChangeNotifierProvider(create: (context)=> ThemeProvider())
+        ChangeNotifierProvider(create: (context)=> ThemeProvider()),
+        ChangeNotifierProvider(create: (_)=> OTPProvider()),
+        ChangeNotifierProvider(create: (_)=> VerifyOTPProvider()),
 
       ],
       child: MaterialApp(
         routes: {
           'login': (context) => const LoginScreen(),
-          '/reset': (context) =>  NewPasswordScreen(),
           '/accountSettings': (context) => const AccountSettingsScreen(),
           '/avatar' : (context) => const ChangeAvatarScreen(),
           '/privacySettings' : (context) => const PrivacySettings(),
@@ -53,6 +58,8 @@ class MyApp extends StatelessWidget {
           '/privacyPolicy': (context) => const PrivacyPolicyScreen(),
           '/cookiePolicyScreen': (context)=> const CookiePolicyScreen(),
           '/course' : (context) => const CourseScreen(),
+          '/reset' : (context) => SendResetLinkScreen(),
+
         },
         theme: _theme.data,
         debugShowCheckedModeBanner: false,

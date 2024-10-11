@@ -99,7 +99,7 @@ class LoginForm extends StatelessWidget {
                   fontWeight: FontWeights.medium,
                 ),
             prefixIcon: Padding(
-              padding: const EdgeInsets.all(3.0),
+              padding: const EdgeInsets.all(5.0),
               child: Container(
                 padding: const EdgeInsets.all(8.0),
                 decoration: BoxDecoration(
@@ -157,7 +157,7 @@ class LoginForm extends StatelessWidget {
                   fontWeight: FontWeights.medium,
                 ),
             prefixIcon: Padding(
-              padding: const EdgeInsets.all(3.0),
+              padding: const EdgeInsets.all(5.0),
               child: Container(
                 padding: const EdgeInsets.all(8.0),
                 decoration: BoxDecoration(

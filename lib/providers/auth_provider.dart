@@ -31,8 +31,6 @@ class AuthProvider extends ChangeNotifier {
     status = AuthStatus.authenticating;
 
     try {
-      // print('Login request: Sending data $loginData');
-
       final Response response = await _client.post(Endpoints.login, data: loginData);
       final responseData = Map<String, dynamic>.from(response.data);
 
@@ -77,7 +75,7 @@ class AuthProvider extends ChangeNotifier {
   Future<void> logout() async {
     try {
       final SharedPreferences prefs = await SharedPreferences.getInstance();
-      await prefs.clear(); // Clear stored tokens and user data
+      await prefs.clear();
       _user = null;
       status = AuthStatus.loggedOut;
     } catch (e) {
@@ -85,13 +83,11 @@ class AuthProvider extends ChangeNotifier {
     }
   }
 
-  // Save user session to SharedPreferences
   Future<void> _saveUserSession(UserModel user) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setString('user', jsonEncode(user.toJson()));
   }
 
-  // Load user session from SharedPreferences
   Future<void> loadUserSession() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     final String? userData = prefs.getString('user');

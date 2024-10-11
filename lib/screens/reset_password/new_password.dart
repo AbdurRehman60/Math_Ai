@@ -5,13 +5,22 @@ import '../../providers/theme_provider.dart';
 import '../../widgets/global_widgets/custom_button.dart';
 import '../../widgets/global_widgets/custom_textfield.dart';
 
-class NewPasswordScreen extends StatelessWidget {
+class NewPasswordScreen extends StatefulWidget {
+  const NewPasswordScreen({super.key, required this.otp, required this.email});
+  final String otp;
+  final String email;
+
+  @override
+  State<NewPasswordScreen> createState() => _NewPasswordScreenState();
+}
+
+class _NewPasswordScreenState extends State<NewPasswordScreen> {
   final TextEditingController _passwordController = TextEditingController();
+
   final TextEditingController _confirmPasswordController =
       TextEditingController();
-  final _formKey = GlobalKey<FormState>();
 
-  NewPasswordScreen({super.key});
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -290,20 +299,26 @@ class NewPasswordScreen extends StatelessWidget {
                       Text(
                         'Password successfully\n changed',
                         style: MathTextTheme().body.copyWith(
-                          color:   Provider.of<ThemeProvider>(context, listen: false).isDarkMode
+                            color: Provider.of<ThemeProvider>(context,
+                                        listen: false)
+                                    .isDarkMode
                                 ? MathColorTheme().white
                                 : MathColorTheme().black,
-                            fontSize: 20, fontWeight: FontWeights.medium),
+                            fontSize: 20,
+                            fontWeight: FontWeights.medium),
                         textAlign: TextAlign.center,
                       ),
                       SizedBoxes.verticalTiny,
                       Text(
                         'Congratulations, your password was\n successfully changed',
                         style: MathTextTheme().subtext.copyWith(
-                          color: Provider.of<ThemeProvider>(context, listen: false).isDarkMode
-                              ? MathColorTheme().neutral400
-                              : MathColorTheme().black,
-                            fontSize: 14, fontWeight: FontWeights.light),
+                            color: Provider.of<ThemeProvider>(context,
+                                        listen: false)
+                                    .isDarkMode
+                                ? MathColorTheme().neutral400
+                                : MathColorTheme().black,
+                            fontSize: 14,
+                            fontWeight: FontWeights.light),
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 24),
@@ -328,7 +343,11 @@ class NewPasswordScreen extends StatelessWidget {
                       height: 30,
                       width: 30,
                       decoration: BoxDecoration(
-                        color: Provider.of<ThemeProvider>(context,listen: false).isDarkMode ? MathColorTheme().seaBlue : Colors.white,
+                        color:
+                            Provider.of<ThemeProvider>(context, listen: false)
+                                    .isDarkMode
+                                ? MathColorTheme().seaBlue
+                                : Colors.white,
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
@@ -338,9 +357,13 @@ class NewPasswordScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      child:  Icon(
+                      child: Icon(
                         Icons.close,
-                        color: Provider.of<ThemeProvider>(context,listen: false).isDarkMode ? MathColorTheme().white : Colors.black,
+                        color:
+                            Provider.of<ThemeProvider>(context, listen: false)
+                                    .isDarkMode
+                                ? MathColorTheme().white
+                                : Colors.black,
                         size: 15,
                       ),
                     ),
