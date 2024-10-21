@@ -18,6 +18,7 @@ import 'package:mathematics_ai/screens/profile/privacy_policy.dart';
 import 'package:mathematics_ai/screens/profile/terms_conditions.dart';
 import 'package:mathematics_ai/screens/profile/widgets/mentions.dart';
 import 'package:mathematics_ai/screens/profile/widgets/privacy_settings.dart';
+import 'package:mathematics_ai/screens/reset_password/menu_provider.dart';
 import 'package:mathematics_ai/screens/reset_password/new_password.dart';
 import 'package:mathematics_ai/screens/reset_password/otp_verification_screen.dart';
 import 'package:mathematics_ai/screens/reset_password/password_reset.dart';
@@ -41,6 +42,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context)=> ThemeProvider()),
         ChangeNotifierProvider(create: (_)=> OTPProvider()),
         ChangeNotifierProvider(create: (_)=> VerifyOTPProvider()),
+        ChangeNotifierProvider(create: (_)=>MenuProvider())
+
 
       ],
       child: MaterialApp(

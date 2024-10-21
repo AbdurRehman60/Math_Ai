@@ -29,4 +29,17 @@ class MathAssets{
   static const darkApp = 'assets/images/darkApp.png';
   static const lightApp = 'assets/images/lightApp.png';
 
+  //menuCovers
+  static const coverA = 'assets/images/cover/BA1.png';
+  static const coverB = 'assets/images/cover/BA2.png';
+  static const coverC = 'assets/images/cover/BA3.png';
+  static const coverD = 'assets/images/cover/BA4.png';
+  static const coverE = 'assets/images/cover/BA5.png';
+  static const coverF = 'assets/images/cover/BA6.png';
+  static const coverG = 'assets/images/cover/BA7.png';
+  static const coverH = 'assets/images/cover/BA8.png';
+  static const coverI = 'assets/images/cover/BA9.png';
+  static const coverJ = 'assets/images/cover/BA10.png';
+
+
 }

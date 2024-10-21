@@ -125,7 +125,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                               fontWeight: FontWeights.medium,
                             ),
                         prefixIcon: Padding(
-                          padding: const EdgeInsets.all(3.0),
+                          padding: const EdgeInsets.all(5.0),
                           child: Container(
                             padding: const EdgeInsets.all(8.0),
                             decoration: BoxDecoration(
@@ -192,7 +192,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                               fontWeight: FontWeights.medium,
                             ),
                         prefixIcon: Padding(
-                          padding: const EdgeInsets.all(3.0),
+                          padding: const EdgeInsets.all(5.0),
                           child: Container(
                             padding: const EdgeInsets.all(8.0),
                             decoration: BoxDecoration(
@@ -326,6 +326,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                         title: 'Go to Log In page',
                         onTap: () {
                           Navigator.pop(context);
+                          Navigator.pushReplacementNamed(context, 'login');
                         },
                         buttonColor: MathColorTheme().black,
                       ),

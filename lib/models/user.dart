@@ -32,29 +32,27 @@ class UserModel {
     required this.stripeSubscriptionId,
     this.avatar,
   });
-
-  // Factory method to create a UserModel from JSON
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
-      refreshToken: json['refresh'],
-      accessToken: json['access'],
-      id: json['id'],
-      email: json['email'],
-      username: json['username'],
+      refreshToken: json['refresh'] ?? '',
+      accessToken: json['access'] ?? '',
+      id: json['id'] ?? 0,
+      email: json['email'] ?? '',
+      username: json['username'] ?? '',
       affiliateLink: json['affiliateLink'],
-      isPaid: json['isPaid'],
+      isPaid: json['isPaid'] ?? false,
       token: json['token'],
       sentBy: json['sentBy'],
-      level: Level.fromJson(json['level']),
-      plan: Plan.fromJson(json['plan']),
-      timestamp: json['timestamp'],
-      stripeCustomerId: json['stripeCustomerId'],
-      stripeSubscriptionId: json['stripeSubscriptionId'],
+      level: Level.fromJson(json['level'] ?? {}),
+      plan: Plan.fromJson(json['plan'] ?? {}),
+      timestamp: json['timestamp'] ?? '',
+      stripeCustomerId: json['stripeCustomerId'] ?? '',
+      stripeSubscriptionId: json['stripeSubscriptionId'] ?? '',
       avatar: json['avatar'],
     );
   }
 
-  // Method to convert UserModel to JSON
+
   Map<String, dynamic> toJson() {
     return {
       'refresh': refreshToken,

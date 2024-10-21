@@ -12,7 +12,7 @@ class Endpoints{
   //authenticatoions
   static const String login = 'authentication/token/obtain';
   static const String verifyOTP = 'authentication/reset';
-
+  static const String menus = 'api/menus';
 
 
 }
