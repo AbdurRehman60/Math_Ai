@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:mathematics_ai/constants/constant_exports.dart';
 import 'package:mathematics_ai/providers/auth_provider.dart';
@@ -19,8 +18,6 @@ import 'package:mathematics_ai/screens/profile/terms_conditions.dart';
 import 'package:mathematics_ai/screens/profile/widgets/mentions.dart';
 import 'package:mathematics_ai/screens/profile/widgets/privacy_settings.dart';
 import 'package:mathematics_ai/screens/reset_password/menu_provider.dart';
-import 'package:mathematics_ai/screens/reset_password/new_password.dart';
-import 'package:mathematics_ai/screens/reset_password/otp_verification_screen.dart';
 import 'package:mathematics_ai/screens/reset_password/password_reset.dart';
 import 'package:mathematics_ai/widgets/bottom_navigation_bar/navigation_bar.dart';
 import 'package:provider/provider.dart';
@@ -39,30 +36,27 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => AuthProvider()),
-        ChangeNotifierProvider(create: (context)=> ThemeProvider()),
-        ChangeNotifierProvider(create: (_)=> OTPProvider()),
-        ChangeNotifierProvider(create: (_)=> VerifyOTPProvider()),
-        ChangeNotifierProvider(create: (_)=>MenuProvider())
-
-
+        ChangeNotifierProvider(create: (context) => ThemeProvider()),
+        ChangeNotifierProvider(create: (_) => OTPProvider()),
+        ChangeNotifierProvider(create: (_) => VerifyOTPProvider()),
+        ChangeNotifierProvider(create: (_) => MenuProvider())
       ],
       child: MaterialApp(
         routes: {
           'login': (context) => const LoginScreen(),
           '/accountSettings': (context) => const AccountSettingsScreen(),
-          '/avatar' : (context) => const ChangeAvatarScreen(),
-          '/privacySettings' : (context) => const PrivacySettings(),
+          '/avatar': (context) => const ChangeAvatarScreen(),
+          '/privacySettings': (context) => const PrivacySettings(),
           '/mentions': (context) => const Mentions(),
-          '/appearance' : (context) => const AppearanceScreen(),
-          '/home' : (context) => const HomeScreen(),
-          '/level' : (context) => const LevelSection(),
+          '/appearance': (context) => const AppearanceScreen(),
+          '/home': (context) => const HomeScreen(),
+          '/level': (context) => const LevelSection(),
           '/legal': (context) => const LegalNoticeScreen(),
-          '/terms' : (context) => const TermsConditionsScreen(),
+          '/terms': (context) => const TermsConditionsScreen(),
           '/privacyPolicy': (context) => const PrivacyPolicyScreen(),
-          '/cookiePolicyScreen': (context)=> const CookiePolicyScreen(),
-          '/course' : (context) => const CourseScreen(),
-          '/reset' : (context) => SendResetLinkScreen(),
-
+          '/cookiePolicyScreen': (context) => const CookiePolicyScreen(),
+          '/course': (context) => const CourseScreen(),
+          '/reset': (context) => SendResetLinkScreen(),
         },
         theme: _theme.data,
         debugShowCheckedModeBanner: false,
@@ -79,7 +73,6 @@ class _AppStartScreen extends StatelessWidget {
     final token = await _storage.read(key: 'access_token');
     print('tokenStatus :$token');
     return token != null;
-
   }
 
   @override
@@ -95,7 +88,7 @@ class _AppStartScreen extends StatelessWidget {
         if (snapshot.data == true) {
           return const BottomNavBar();
         } else {
-          return  const LoginScreen();
+          return const LoginScreen();
         }
       },
     );
